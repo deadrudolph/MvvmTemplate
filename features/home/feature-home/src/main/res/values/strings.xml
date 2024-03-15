@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="home">Home</string>
+    <!-- HOME FRAGMENT -->
+    <string name="user_name_template">User name : %s</string>
+    <string name="user_address_template">address : %s</string>
+    <string name="go_to_profile_module">Go to profile module</string>
+    <string name="fragment_home_title">Home feature module \n
+        simple rest API request</string>
+</resources>

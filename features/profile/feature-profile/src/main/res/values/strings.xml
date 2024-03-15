@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile">Profile</string>
+
+    <!-- FIRST PROFILE FRAGMENT -->
+    <string name="back_to_home_module">Back to home module</string>
+    <string name="go_to_profile_second_fragment">Go to profile second screen</string>
+    <string name="fragment_profile_title">Profile feature module \n First screen \n
+        pagginate request with parameters</string>
+    <string name="user_name_template">User name: %s</string>
+    <string name="user_address_template">User address: %s</string>
+
+    <!-- SECOND PROFILE FRAGMENT -->
+    <string name="fragment_profile_second_title">Profile feature module \n Second screen \n
+        get user by id as request body</string>
+    <string name="user_id_template">User id: %s</string>
+    <string name="user_gender_template">User gender: %s</string>
+    <string name="user_date_of_birth_template">User date of birth: %s</string>
+    <string name="user_age_template">User age: %d</string>
+    <string name="user_contacts_template">"User phone : %s \nUser email: %s \nUser twitter: %s \n"</string>
+    <string name="back_to_profile_first_fragment">Back to profile first fragment</string>
+    <string name="go_to_profile_third_fragment">Go to Home first screen</string>
+
+    <!-- THIRD PROFILE FRAGMENT -->
+    <string name="users_data_template">User name : %s \nUser address : %s \n</string>
+    <string name="back_to_profile_second_fragment">Back to profile second screen</string>
+    <string name="fragment_profile_third_title">Profile feature module \n Third screen \n
+        graphQL request</string>
+</resources>

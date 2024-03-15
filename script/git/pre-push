@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Run pre push check"
+bash ./script/git/pre-push-script.sh
