@@ -12,7 +12,7 @@ internal class UsersRepositoryImpl @Inject constructor(
     private val usersResponseToUsersMapper: UsersResponseToUsersMapper,
 ) : UsersRepository {
 
-    override suspend fun getUsers(): Result<List<User>> = safeApiCall {
-        Result.Success(usersResponseToUsersMapper(api.getUsers()))
+    override suspend fun getUsers(pageNumber: Int): Result<List<User>> = safeApiCall {
+        Result.Success(usersResponseToUsersMapper(api.getUsers(pageNumber)))
     }
 }

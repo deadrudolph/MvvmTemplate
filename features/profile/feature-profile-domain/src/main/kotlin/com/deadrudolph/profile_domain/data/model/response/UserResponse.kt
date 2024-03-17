@@ -4,50 +4,30 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-internal data class UserResponse(
+internal data class UsersResponse(
+    val page: Long,
+    @Json(name = "per_page")
+    val perPage: Long,
+    val total: Long,
+    @Json(name = "total_pages")
+    val totalPages: Long,
+    val data: List<User>,
+    val support: Support
+)
 
-    @Json(name = "id")
-    val id: String,
-
-    @Json(name = "fullName")
-    val fullName: String,
-
-    @Json(name = "firstName")
-    val firstName: String,
-
-    @Json(name = "lastName")
-    val lastName: String,
-
-    @Json(name = "gender")
-    val gender: String,
-
-    @Json(name = "birthday")
-    val birthday: String,
-
-    @Json(name = "age")
-    val age: Int,
-
-    @Json(name = "avatar")
-    val avatar: String,
-
-    @Json(name = "address")
-    val address: String,
-
-    @Json(name = "zip")
-    val zip: String,
-
-    @Json(name = "state")
-    val state: String,
-
-    @Json(name = "phone")
-    val phone: String,
-
-    @Json(name = "email")
+@JsonClass(generateAdapter = true)
+data class User(
+    val id: Long,
     val email: String,
+    @Json(name = "first_name")
+    val firstName: String,
+    @Json(name = "last_name")
+    val lastName: String,
+    val avatar: String,
+)
 
-    @Json(name = "twitter")
-    val twitter: String,
-
-    @Json(name = "ssn")
-    val ssn: String,
+@JsonClass(generateAdapter = true)
+data class Support(
+    val url: String,
+    val text: String,
 )

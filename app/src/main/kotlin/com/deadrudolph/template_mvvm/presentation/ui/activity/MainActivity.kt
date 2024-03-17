@@ -41,7 +41,7 @@ internal class MainActivity : ComponentActivity(), ActivityActions {
 
     override fun getTheme(): Resources.Theme {
         val theme = super.getTheme()
-        theme.applyStyle(R.style.Theme_ComposeMultiModuleTemplate, true)
+        theme.applyStyle(R.style.Theme_Template, true)
         return theme
     }
 

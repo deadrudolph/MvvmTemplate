@@ -7,5 +7,5 @@ internal class GetAllUsersUseCaseImpl @Inject constructor(
     private val usersRepository: UsersRepository
 ) : GetAllUsersUseCase {
 
-    override suspend operator fun invoke() = usersRepository.getUsers()
+    override suspend operator fun invoke(pageNumber: Int) = usersRepository.getUsers(pageNumber)
 }

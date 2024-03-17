@@ -8,7 +8,6 @@ internal class UsersPageRequestToUserRequestMapper @Inject constructor() :
     (UserPageRequest) -> UserDataRequest {
 
     override fun invoke(userPageRequest: UserPageRequest) = UserDataRequest(
-        pageNumber = userPageRequest.page,
-        limit = userPageRequest.limit
+        pageNumber = userPageRequest.page
     )
 }

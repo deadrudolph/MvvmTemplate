@@ -5,5 +5,5 @@ import com.deadrudolph.home_domain.domain.model.response.User
 
 internal interface UsersRepository {
 
-    suspend fun getUsers(): Result<List<User>>
+    suspend fun getUsers(pageNumber: Int): Result<List<User>>
 }

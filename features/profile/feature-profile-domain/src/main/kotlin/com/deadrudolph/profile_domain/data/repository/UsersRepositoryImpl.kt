@@ -23,8 +23,7 @@ internal class UsersRepositoryImpl @Inject constructor(
             Result.Success(
                 usersResponseToUsersMapper(
                     api.getUsersPaginate(
-                        pageNumber = request.pageNumber,
-                        limit = request.limit
+                        pageNumber = request.pageNumber
                     )
                 )
             )

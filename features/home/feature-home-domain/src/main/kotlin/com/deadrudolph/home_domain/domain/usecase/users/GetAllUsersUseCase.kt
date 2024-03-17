@@ -5,5 +5,5 @@ import com.deadrudolph.home_domain.domain.model.response.User
 
 interface GetAllUsersUseCase {
 
-    suspend operator fun invoke(): Result<List<User>>
+    suspend operator fun invoke(pageNumber: Int): Result<List<User>>
 }

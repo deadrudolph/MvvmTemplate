@@ -14,6 +14,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.deadrudolph.feature_home.R
 import com.deadrudolph.home_domain.domain.model.response.User
+import com.deadrudolph.uicomponents.compose.components.DefaultErrorDialog
+import com.deadrudolph.uicomponents.compose.components.DefaultLoading
 import com.deadrudolph.uicomponents.utils.LoadState
 
 @Composable
@@ -28,6 +30,14 @@ internal fun HomeScreen(
             ScreenContent(
                 usersList = data
             )
+        },
+        loadingView = { isLoading ->
+            if (isLoading) DefaultLoading()
+        },
+        errorView = { message ->
+            DefaultErrorDialog(text = message) {
+                homeViewModel.fetchContent()
+            }
         }
     )
 }
@@ -73,8 +83,8 @@ private fun UsersList(
                 key = { item -> item.id }
             ) { data ->
                 UserItem(
-                    userName = data.fullName,
-                    address = data.address
+                    userName = data.firstName,
+                    address = data.email
                 )
             }
         },

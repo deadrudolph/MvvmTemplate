@@ -12,6 +12,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,14 +20,21 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.deadrudolph.feature_profile.R
 import com.deadrudolph.profile_domain.domain.model.response.User
+import com.deadrudolph.uicomponents.compose.components.DefaultErrorDialog
+import com.deadrudolph.uicomponents.compose.components.DefaultLoading
 import com.deadrudolph.uicomponents.utils.LoadState
 
 @Composable
 internal fun SecondProfileScreen(
     viewModel: SecondProfileViewModel,
+    userId: String,
     popBackStack: () -> Unit,
 ) {
     val userList = viewModel.userDataFlow.collectAsState()
+
+    LaunchedEffect(key1 = Unit) {
+        viewModel.fetchContent(userId)
+    }
 
     Box(
         modifier = Modifier
@@ -34,7 +42,7 @@ internal fun SecondProfileScreen(
             .background(Color.Green)
     ) {
         userList.value.LoadState(
-            onRestartState = viewModel::fetchContent,
+            onRestartState = { viewModel.fetchContent(userId) },
             successContent = { data ->
                 ScreenContent(
                     user = data,
@@ -43,6 +51,14 @@ internal fun SecondProfileScreen(
                     },
                     onClickNext = viewModel::onNextScreen
                 )
+            },
+            loadingView = { isLoading ->
+                if (isLoading) DefaultLoading()
+            },
+            errorView = { message ->
+                DefaultErrorDialog(text = message) {
+                    viewModel.fetchContent(userId)
+                }
             }
         )
     }
@@ -55,13 +71,9 @@ private fun ScreenContent(
     onClickNext: () -> Unit,
 ) {
     val resultList = listOf(
-        stringResource(R.string.user_name_template, user.fullName),
-        stringResource(R.string.user_address_template, user.address),
-        stringResource(R.string.user_age_template, user.age),
-        stringResource(R.string.user_date_of_birth_template, user.birthday),
+        stringResource(R.string.user_name_template, user.firstName),
+        stringResource(R.string.user_address_template, user.email),
         stringResource(R.string.user_id_template, user.id),
-        stringResource(R.string.user_gender_template, user.gender),
-        stringResource(R.string.user_contacts_template, user.phone, user.email, user.twitter)
     )
 
     Column(

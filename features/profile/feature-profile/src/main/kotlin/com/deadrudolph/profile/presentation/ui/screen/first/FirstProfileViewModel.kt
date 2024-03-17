@@ -10,5 +10,5 @@ internal abstract class FirstProfileViewModel : BaseViewModel() {
     abstract val usersFlow: StateFlow<Result<List<User>>>
 
     abstract fun fetchContent()
-    abstract fun onClickNext()
+    abstract fun onClickNext(userId: String)
 }

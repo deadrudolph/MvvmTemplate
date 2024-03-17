@@ -37,7 +37,7 @@ internal class NetworkModule {
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
-            .connectTimeout(networkConfig.connectTimeOutSeconds, TimeUnit.MINUTES)
+            .connectTimeout(networkConfig.connectTimeOutSeconds, TimeUnit.SECONDS)
             .readTimeout(networkConfig.readTimeoutSeconds, TimeUnit.SECONDS)
             .writeTimeout(networkConfig.writeTimeoutSeconds, TimeUnit.SECONDS)
             .build()
@@ -47,7 +47,7 @@ internal class NetworkModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://yourhost.com")
+            .baseUrl("https://reqres.in/api/")
             .client(okHttpClient)
             .addConverterFactory(
                 MoshiConverterFactory.create(
