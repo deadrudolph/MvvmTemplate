@@ -8,6 +8,7 @@ import com.deadrudolph.profile_domain.domain.model.request.UserPageRequest
 import com.deadrudolph.profile_domain.domain.model.response.User
 import com.deadrudolph.profile_domain.mapper.domaintoremote.UserResponseToUserMapper
 import com.deadrudolph.profile_domain.mapper.domaintoremote.UsersPageRequestToUserRequestMapper
+import kotlinx.collections.immutable.ImmutableList
 import javax.inject.Inject
 
 internal class UsersRepositoryImpl @Inject constructor(
@@ -17,7 +18,7 @@ internal class UsersRepositoryImpl @Inject constructor(
     private val usersPageRequestToUserRequestMapper: UsersPageRequestToUserRequestMapper,
 ) : UsersRepository {
 
-    override suspend fun getPageOfUsersList(userPageRequest: UserPageRequest): Result<List<User>> =
+    override suspend fun getPageOfUsersList(userPageRequest: UserPageRequest): Result<ImmutableList<User>> =
         safeApiCall {
             val request = usersPageRequestToUserRequestMapper(userPageRequest)
             Result.Success(

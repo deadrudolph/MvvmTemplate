@@ -14,6 +14,7 @@ dependencies {
 
     implementation(libs.dagger)
     ksp(libs.daggerCompiler)
+    implementation(libs.immutableList)
     implementation(libs.retrofit)
     implementation(libs.moshiKotlin)
 }

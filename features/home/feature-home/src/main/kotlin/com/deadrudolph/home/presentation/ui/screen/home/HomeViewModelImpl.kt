@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.deadrudolph.common_domain.state.Result
 import com.deadrudolph.home_domain.domain.model.response.User
 import com.deadrudolph.home_domain.domain.usecase.users.GetAllUsersUseCase
+import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,7 +15,7 @@ internal class HomeViewModelImpl @Inject constructor(
 ) : HomeViewModel() {
 
     override val usersFlow =
-        MutableStateFlow<Result<List<User>>>(Result.Loading(false))
+        MutableStateFlow<Result<ImmutableList<User>>>(Result.Loading(false))
 
     init {
         Log.d("LifecycleTest", "Init Home ViewModel")

@@ -17,6 +17,7 @@ import com.deadrudolph.home_domain.domain.model.response.User
 import com.deadrudolph.uicomponents.compose.components.DefaultErrorDialog
 import com.deadrudolph.uicomponents.compose.components.DefaultLoading
 import com.deadrudolph.uicomponents.utils.LoadState
+import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 internal fun HomeScreen(
@@ -43,7 +44,7 @@ internal fun HomeScreen(
 }
 
 @Composable
-private fun ScreenContent(usersList: List<User>) {
+private fun ScreenContent(usersList: ImmutableList<User>) {
     Column(
         modifier = Modifier
             .fillMaxSize()

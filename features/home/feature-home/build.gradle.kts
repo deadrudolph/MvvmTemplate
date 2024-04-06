@@ -31,6 +31,7 @@ dependencies {
     ksp(libs.daggerCompiler)
 
     implementation(libs.fragmentKtx)
+    implementation(libs.immutableList)
     implementation(libs.material)
     implementation(libs.viewModelScope)
 
