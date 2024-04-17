@@ -8,9 +8,9 @@ include(
     "navigation",
     "uicomponents",
     "common:common-network",
-    "common:common-database",
     "common:common-di",
-    ":common:common-domain",
+    "common:common-domain",
+    "common:common-test"
 )
 include(
     "features:home:feature-home-domain",

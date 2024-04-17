@@ -9,6 +9,24 @@ android {
     buildFeatures {
         buildConfig = true
     }
+
+    buildTypes {
+        getByName("debug") {
+            buildConfigField(
+                "String",
+                "baseUrl",
+                "\"https://reqres.in/api/\""
+            )
+        }
+
+        getByName("release") {
+            buildConfigField(
+                "String",
+                "baseUrl",
+                "\"https://reqres.in/api/\""
+            )
+        }
+    }
 }
 
 dependencies {

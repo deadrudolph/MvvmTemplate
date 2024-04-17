@@ -7,7 +7,8 @@ lifecycle = "2.7.0"
 moshi = "1.15.0"
 retrofit = "2.9.0"
 detekt = "1.23.4"
-compose = "1.6.3"
+coil = "2.6.0"
+compose = "1.6.4"
 composeActivity = "1.8.2"
 composeCompiler = "1.5.10"
 junit5 = "5.9.3"
@@ -29,6 +30,11 @@ junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 immutableList = "0.3.5"
+turbine = "1.1.0"
+mockito = "5.11.0"
+mockitoKotlin = "5.2.1"
+test-coroutines = "1.8.0"
+test-assertJ = "3.25.3"
 
 [libraries]
 activityKtx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -36,6 +42,8 @@ androidGradle = { module = "com.android.tools.build:gradle", version.ref = "andr
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 chuck = { module = "com.readystatesoftware.chuck:library", version.ref = "chuck" }
 chuckNoOp = { module = "com.readystatesoftware.chuck:library-no-op", version.ref = "chuck" }
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 compose = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 composeActivity = { module = "androidx.activity:activity-compose", version.ref = "composeActivity" }
 composeCompiler = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
@@ -68,12 +76,41 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 retrofitMoshiConverter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 viewModelScope = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+
+# Testing
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+junit5-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
+junit5-bom = { module = "org.junit:junit-bom", version.ref = "junit5" }
+junit5-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
+junit5-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit5" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+test-assertJ = { module = "org.assertj:assertj-core", version.ref = "test-assertJ" }
+test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "test-coroutines" }
+test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+
+# UI Testing
+jUnit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+manifestUI = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 
 [plugins]
 io-gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 com-google-devtools-kspt = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin1922" }
+
+[bundles]
+testBundle = [
+    "junit5-api",
+    "junit5-engine",
+    "junit5-params",
+    "mockito-core",
+    "mockito-kotlin",
+    "test-coroutines",
+    "test-turbine",
+    "androidx-test-ext-junit",
+    "espresso-core",
+    "test-assertJ"
+]

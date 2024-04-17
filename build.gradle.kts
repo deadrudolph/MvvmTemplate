@@ -9,6 +9,8 @@ buildscript {
 
     dependencies {
         classpath(libs.googleServices)
+        classpath(libs.androidGradle)
+        classpath(libs.kotlinGradle)
     }
 
     repositories {
@@ -20,10 +22,5 @@ buildscript {
         flatDir {
             dirs("libs")
         }
-    }
-
-    dependencies {
-        classpath(libs.androidGradle)
-        classpath(libs.kotlinGradle)
     }
 }

@@ -1,6 +1,7 @@
 plugins {
     id("com.deadrudolph.android.library")
     id("com.deadrudolph.android.di")
+    id("com.deadrudolph.android.test")
 }
 
 android {

@@ -10,8 +10,7 @@ import java.lang.reflect.Type
 
 internal abstract class MoshiArrayListJsonAdapter<C : MutableCollection<T>?, T> private constructor(
     private val elementAdapter: JsonAdapter<T>
-) :
-    JsonAdapter<C>() {
+) : JsonAdapter<C>() {
     abstract fun newCollection(): C
 
     @Throws(IOException::class)

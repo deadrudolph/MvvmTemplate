@@ -22,6 +22,13 @@ class AndroidTestConventionPlugin : Plugin<Project> {
                 testRuntimeOnly(libsDependency("junit5-engine"))
                 testImplementation(libsDependency("junit5-api"))
                 testImplementation(libsDependency("junit5-params"))
+                testImplementation(libsDependency("test-turbine"))
+                testImplementation(libsDependency("mockito-core"))
+                testImplementation(libsDependency("mockito-kotlin"))
+                testImplementation(libsDependency("test-coroutines"))
+                testImplementation(libsDependency("androidx-test-ext-junit"))
+                testImplementation(libsDependency("espresso-core"))
+                testImplementation(project(":common:common-test"))
             }
         }
     }

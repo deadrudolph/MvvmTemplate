@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-    <ManuallySuppressedIssues></ManuallySuppressedIssues>
-    <CurrentIssues>
-    </CurrentIssues>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>TooManyFunctions:AssertionHelpers.kt$com.deadrudolph.common_test.AssertionHelpers.kt</ID>
+  </CurrentIssues>
 </SmellBaseline>

@@ -47,7 +47,7 @@ internal class NetworkModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://reqres.in/api/")
+            .baseUrl(BuildConfig.baseUrl)
             .client(okHttpClient)
             .addConverterFactory(
                 MoshiConverterFactory.create(
