@@ -36,9 +36,6 @@ fun <T> Result<T>.LoadState(
                 if (this.state) LoadingDialog()
             }
         }
-        is Result.IDLE -> {
-            // Default action state
-        }
     }
 }
 
